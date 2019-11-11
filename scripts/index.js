@@ -1,0 +1,1 @@
+require('../includes/helpers/tags')(hexo);

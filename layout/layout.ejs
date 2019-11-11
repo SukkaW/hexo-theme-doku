@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- partial('_partial/head') %>
+</head>
+
+<body>
+    <%- partial('_partial/navbar') %>
+
+    <div class="container">
+        <%- body %>
+    </div>
+
+    <script src="<%= url_for('theme-doku/js/doku.js') %>"></script>
+</body>
+
+</html>

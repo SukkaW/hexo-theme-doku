@@ -1,0 +1,32 @@
+/* === Override Bulma.css === */
+
+/* add beautiful shadow to navbar */
+.navbar {
+    box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+    border-bottom: 1px solid #d4dadf;
+}
+
+/* make burger btn align to left */
+.navbar-burger {
+    margin-left: inherit;
+}
+
+/* remove the border of i18n button */
+#navbar-i18n-btn {
+    border: none;
+}
+
+/* === Navbar === */
+.doku-navbar-title>* {
+    vertical-align: middle;
+}
+
+.doku-navbar-title>img {
+    margin-right: .8rem;
+}
+
+.doku-navbar-title>span {
+    font-weight: 500;
+    position: relative;
+    bottom: .1rem;
+}
