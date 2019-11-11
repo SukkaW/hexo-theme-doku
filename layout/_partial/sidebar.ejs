@@ -1,0 +1,20 @@
+<aside class="column is-3 doku-sidebar is-narrow-touch is-hidden-touch">
+    <div class="menu">
+        <% if (theme.sidebar.level === 1) { %>
+        <ul class="menu-list">
+            <% for (const item of theme.sidebar.items) { %>
+                <li><a href="<%= item.split(' | ')[1] %>"><%= item.split(' | ')[0] %></a></li>
+            <% } %>
+        </ul>
+        <% } else if (theme.sidebar.level === 2) { %>
+            <% for (const [header, children] of Object.entries(theme.sidebar.items)) { %>
+                <p class="menu-label"><%= header %></p>
+                <ul class="menu-list">
+                    <% for (const item of children) { %>
+                        <li><a href="<%= item.split(' | ')[1] %>"><%= item.split(' | ')[0] %></a></li>
+                    <% } %>
+                </ul>
+            <% } %>
+        <% } %>
+    </div>
+</aside>

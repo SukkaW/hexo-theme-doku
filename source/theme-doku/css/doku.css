@@ -16,6 +16,19 @@
     border: none;
 }
 
+.columns.is-fullheight {
+    min-height: calc(100vh - (4rem + 2rem - .75rem));
+    max-height: calc(100vh - (4rem + 2rem - .75rem));
+    height: calc(100vh - (4rem + 2rem - .75rem));
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+.columns.is-fullheight .column {
+    overflow-y: auto
+}
+
 /* === Navbar === */
 .doku-navbar-title>* {
     vertical-align: middle;
@@ -29,4 +42,14 @@
     font-weight: 500;
     position: relative;
     bottom: .1rem;
+}
+
+/* === Sidebar === */
+.doku-sidebar {
+    padding: 2.5rem 1.5rem;
+}
+
+.doku-sidebar .menu-label {
+    font-size: .8rem;
+    font-weight: 500;
 }

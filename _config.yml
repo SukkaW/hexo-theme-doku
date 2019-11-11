@@ -17,3 +17,26 @@ navbar:
     - logo: 'fab fa-github' # The font-awesome class name of the logo
       text: '' # The logo text
       url: 'https://github.com/SukkaW/hexo-theme-doku' # The url
+
+# --------------------
+# Sidebar
+# --------------------
+sidebar:
+  level: 2 # 1 or 2
+  items:
+    # 1 level example:
+    # - 开始使用 | start.html
+    # - 配置文件 | config.html
+    #
+    # 2 level example:
+    # 开始使用:
+    #  - 安装 | install.html
+    #  - 配置 | config.html
+    # 基本操作:
+    #  - 编写 | writing.html
+    开始使用:
+      - 安装 | install.html
+      - 配置 | config.html
+    基本操作:
+      - 编写 | writing.html
+

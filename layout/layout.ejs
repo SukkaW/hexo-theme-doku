@@ -9,7 +9,12 @@
     <%- partial('_partial/navbar') %>
 
     <div class="container">
-        <%- body %>
+        <section class="main-content columns is-fullheight">
+            <%- partial('_partial/sidebar') %>
+            <main>
+                <%- body %>
+            </main>
+        </section>
     </div>
 
     <script src="<%= url_for('theme-doku/js/doku.js') %>"></script>
