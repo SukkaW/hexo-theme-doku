@@ -295,6 +295,53 @@ html *::-webkit-scrollbar-thumb {
     font-weight: 700;
 }
 
+/* === Pagination === */
+.doku-pagination {
+    display: flex;
+    list-style: none;
+    margin: 4rem 0 1rem;
+    padding: 2rem .5rem 0;
+    border-top: 1px solid rgba(0,0,0,.07);
+}
+
+.doku-pagination .page-item {
+    margin: .2rem .05rem;
+}
+
+.doku-pagination .page-item span {
+    display: inline-block;
+    padding: .2rem .2rem;
+}
+
+.doku-pagination .page-item a {
+    color: #4a4a4a;
+    border-radius: .1rem;
+    display: inline-block;
+    padding: .2rem .4rem;
+    text-decoration: none;
+}
+
+.doku-pagination .page-item.page-prev,
+.doku-pagination .page-item.page-next {
+    flex: 1 0 50%;
+}
+
+.doku-pagination .page-item.page-next {
+    text-align: right;
+}
+
+.doku-pagination .page-item .page-item-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.doku-pagination .page-item .page-item-subtitle {
+    margin: 0;
+    opacity: .5;
+    font-size: 0.9rem;
+}
+
 /* === Sidebar Mobile === */
 body.doku-sidebar-visible::before {
     position: fixed;
@@ -325,6 +372,7 @@ body.doku-sidebar-visible .doku-main-wrapper {
 }
 
 @media screen and (max-width: 1024px) {
+
     .doku-sidebar,
     .doku-sidebar-content,
     .doku-main-wrapper {

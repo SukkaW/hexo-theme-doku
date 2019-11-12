@@ -1,3 +1,5 @@
+<% const sidebar = theme.sidebar[page.lang][page.type]; %>
+
 <aside class="doku-sidebar" id="doku-sidebar">
     <div class="doku-sidebar-content">
         <div class="menu">
@@ -11,21 +13,23 @@
                 </ul>
             <% } %>
             <hr class="is-hidden-desktop">
-            <% if (theme.sidebar.level === 1) { %>
-                <ul class="menu-list">
-                    <% for (const item of theme.sidebar.items) { %>
-                        <li><a href="<%= item.split(' | ')[1] %>"><%= item.split(' | ')[0] %></a></li>
-                    <% } %>
-                </ul>
-            <% } else if (theme.sidebar.level === 2) { %>
-                <% for (const obj of theme.sidebar.items) { %>
-                    <% for (const [header, children] of Object.entries(obj)) { %>
-                        <p class="menu-label"><%= header %></p>
-                        <ul class="menu-list">
-                            <% for (const item of children) { %>
-                                <li><a href="<%= item.split(' | ')[1] %>"><%= item.split(' | ')[0] %></a></li>
-                            <% } %>
-                        </ul>
+            <% if (page.type) { %>
+                <% if (sidebar.level === 1) { %>
+                    <ul class="menu-list">
+                        <% for (const item of sidebar.items) { %>
+                            <li><a href="<%= url_for(item.split(' | ')[1]) %>"><%= item.split(' | ')[0] %></a></li>
+                        <% } %>
+                    </ul>
+                <% } else if (sidebar.level === 2) { %>
+                    <% for (const obj of sidebar.items) { %>
+                        <% for (const [header, children] of Object.entries(obj)) { %>
+                            <p class="menu-label"><%= header %></p>
+                            <ul class="menu-list">
+                                <% for (const item of children) { %>
+                                    <li><a href="<%= url_for(item.split(' | ')[1]) %>"><%= item.split(' | ')[0] %></a></li>
+                                <% } %>
+                            </ul>
+                        <% } %>
                     <% } %>
                 <% } %>
             <% } %>
