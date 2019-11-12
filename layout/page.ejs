@@ -10,6 +10,9 @@
             <% if (page.description) { %>
                 <p class="subtitle"><%= page.description %></p>
             <% } %>
+            <% if (theme.github.repo && theme.github.edit_on_github) { %>
+                <a href="<%= 'https://github.com/' + theme.github.repo + '/tree/master/source/' + page.source %>" target="_blank" rel="external nofollow noreferrer noopener" class="button is-small is-rounded is-black"><span class="icon is-small"><i class="fab fa-github"></i></span><span>在 GitHub 上编辑</span></a>
+            <% } %>
         </div>
     </header>
     <div class="columns">

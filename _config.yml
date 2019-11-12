@@ -39,3 +39,7 @@ sidebar:
       - '配置 | config.html'
     - 基本操作:
       - '编写 | writing.html'
+
+github:
+  repo: sukkaw/doku-theme-docs # sukkaw/doku-theme-docs
+  edit_on_github: true # true / false
