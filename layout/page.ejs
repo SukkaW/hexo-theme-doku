@@ -13,16 +13,16 @@
         </div>
     </header>
     <div class="columns">
-        <div class="column is-9 doku-document-wrapper">
+        <div class="column is-9-tablet doku-document-wrapper">
             <div class="content">
                 <%- page.content %>
             </div>
         </div>
-        <div class="column is-3 is-narrow-touch is-hidden-touch">
+        <div class="column is-3 is-narrow-touch is-hidden-mobile">
             <% if (toc_obj.length > 0) { %>
             <aside class="doku-document-toc" id="doku-document-toc">
                 <div class="doku-document-toc-content">
-                    <p class="doku-document-toc-title">Table of Contents</p>
+                    <p class="doku-document-toc-title">目录</p>
                     <%- toc_obj %>
                 </div>
             </aside>

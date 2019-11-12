@@ -28,6 +28,19 @@
     };
 
     autoFixed('doku-sidebar', 'doku-navbar');
+
+    /* Toggle sidebar */
+    document.getElementById('doku-sidebar-toggle').addEventListener('click', function () {
+        document.body.classList.toggle('doku-sidebar-visible')
+    });
+
+    document.getElementById('doku-main').addEventListener('click', function () {
+        document.body.classList.remove('doku-sidebar-visible')
+    })
+
     /* Copyright year auto update */
     document.getElementById('doku-copyrght-year').textContent = new Date().getFullYear();
+
+    /* Init css: sticky polyfill */
+    Stickyfill.add(document.getElementsByClassName('doku-document-toc'));
 })(window, document);

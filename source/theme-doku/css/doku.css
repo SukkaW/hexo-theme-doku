@@ -46,7 +46,7 @@
 html *::-webkit-scrollbar {
     width: 6px;
     height: 4px;
-    background: transparent;
+    background: #f9fafb;
 }
 
 @media (min-width: 1024px) {
@@ -84,10 +84,24 @@ html *::-webkit-scrollbar-thumb {
     bottom: .1rem;
 }
 
+@media screen and (max-width: 1024px) {
+    #doku-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+    }
+
+    .main-content {
+        margin-top: 3.25rem;
+    }
+}
+
+
 /* === Sidebar === */
 .doku-sidebar {
     background: #f9fafb;
-    transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
     position: relative;
     float: left;
     top: 0;
@@ -97,18 +111,19 @@ html *::-webkit-scrollbar-thumb {
     overflow-x: overlay;
     -webkit-overflow-scrolling: touch;
     z-index: 2;
+    width: 15rem;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 1024px) {
     .doku-sidebar {
-        width: 15rem;
+        position: fixed;
+        top: 3rem;
     }
 }
 
 .doku-sidebar-content {
     padding: 2.5rem 1.5rem 2.5rem 2.5rem;
     height: 100%;
-    transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -135,14 +150,14 @@ html *::-webkit-scrollbar-thumb {
     height: auto;
     transform: translate3d(0, 0, 0);
     z-index: 2;
+    background: #fff;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1024px) {
     .doku-main-wrapper {
         margin-left: 15rem;
     }
 }
-
 
 /* === Document === */
 .doku-document-wrapper {
@@ -150,7 +165,7 @@ html *::-webkit-scrollbar-thumb {
     word-wrap: break-word;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1024px) {
     .doku-document-wrapper {
         padding: 2.5rem 2rem 1.25rem 2.75rem;
     }
@@ -246,6 +261,47 @@ html *::-webkit-scrollbar-thumb {
 .hljs {
     padding: 0;
     background: transparent;
+}
+
+/* === Sidebar Mobile === */
+body.doku-sidebar-visible .doku-sidebar {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+body.doku-sidebar-visible .soku-sidebar .doku-sidebar-content {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+body.doku-sidebar-visible .doku-main-wrapper {
+    -webkit-transform: translateX(15rem);
+    -moz-transform: translateX(15rem);
+    -o-transform: translateX(15rem);
+    -ms-transform: translateX(15rem);
+    transform: translateX(15rem);
+}
+
+@media screen and (min-width: 1023px) {
+    body.doku-sidebar-visible .doku-main-wrapper {
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+.doku-sidebar,
+.doku-sidebar-content,
+.doku-main-wrapper {
+    transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
 }
 
 /* === Footer === */

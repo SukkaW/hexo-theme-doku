@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-brand">
             <!-- burger btn -->
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <a role="button" class="navbar-burger burger" id="doku-sidebar-toggle">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -15,7 +15,7 @@
                 </h1>
             </a>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-menu">
             <div class="navbar-start">
                 <% for (const link of theme.navbar.links) { %>
                     <a class="navbar-item" href="<%= url_for(link.url) %>">
