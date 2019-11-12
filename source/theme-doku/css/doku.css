@@ -16,6 +16,17 @@
     border: none;
 }
 
+/* remove unneccsary margin from container */
+.main-content.columns,
+.doku-document-container .columns {
+    margin: 0;
+}
+
+/* make hero body padding a little larger */
+.hero-body {
+    padding: 3.5rem 3rem;
+}
+
 .columns.is-fullheight {
     min-height: calc(100vh - (4rem + 2rem - .75rem));
     max-height: calc(100vh - (4rem + 2rem - .75rem));
@@ -27,6 +38,35 @@
 
 .columns.is-fullheight .column {
     overflow-y: auto
+}
+
+/* === Scrollbar === */
+/* Scrollbar */
+
+html *::-webkit-scrollbar {
+    width: 6px;
+    height: 4px;
+    background: transparent;
+}
+
+@media (min-width: 1024px) {
+    html *::-webkit-scrollbar {
+        width: 8px;
+        height: 6px;
+    }
+}
+
+html *::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .3);
+}
+
+.suka-devide-dot::after {
+    content: " · "
+}
+
+/* === Layout === */
+.main-content {
+    width: 100%;
 }
 
 /* === Navbar === */
@@ -46,19 +86,166 @@
 
 /* === Sidebar === */
 .doku-sidebar {
-    padding: 2.5rem 1.5rem;
+    background: #f9fafb;
+    transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+    position: relative;
+    float: left;
+    top: 0;
+    right: auto;
+    left: 0;
+    height: auto;
+    overflow-x: overlay;
+    -webkit-overflow-scrolling: touch;
+    z-index: 2;
 }
 
 @media screen and (min-width: 769px) {
     .doku-sidebar {
         width: 15rem;
-        flex: none;
     }
+}
+
+.doku-sidebar-content {
+    padding: 2.5rem 1.5rem 2.5rem 2.5rem;
+    height: 100%;
+    transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.doku-sidebar.doku-fixed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
 .doku-sidebar .menu-label {
     font-size: .8rem;
     font-weight: 500;
+}
+
+.doku-main-wrapper {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    transform: translate3d(0, 0, 0);
+    z-index: 2;
+}
+
+@media screen and (min-width: 769px) {
+    .doku-main-wrapper {
+        margin-left: 15rem;
+    }
+}
+
+
+/* === Document === */
+.doku-document-wrapper {
+    padding: 1.25rem 1rem;
+    word-wrap: break-word;
+}
+
+@media screen and (min-width: 769px) {
+    .doku-document-wrapper {
+        padding: 2.5rem 2rem 1.25rem 2.75rem;
+    }
+}
+
+.doku-document-wrapper .content {
+    color: #0a0f28;
+}
+
+.doku-document-toc {
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    padding: 1rem;
+    border-left: 1px solid #eee;
+    line-height: 1;
+    font-size: .9rem
+}
+
+.doku-document-toc .post-toc {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin: 0;
+}
+
+.doku-document-toc a {
+    color: #50596c !important;
+}
+
+.doku-document-toc .post-toc-item {
+    padding: .5em .75em;
+}
+
+.doku-document-toc-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.doku-document-toc .post-toc-link:hover {
+    color: #40495c !important;
+    font-weight: 500;
+}
+
+.doku-document-toc ol {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0.8rem;
+}
+
+.doku-document-toc li {
+    list-style: none;
+}
+
+.doku-document-toc>ol,
+.doku-document-toc>p {
+    margin-left: 0;
+    max-width: 8rem;
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+/* override highlightjs */
+
+.content .highlight {
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow: auto;
+}
+
+.content .highlight table td,
+.content .highlight table th {
+    padding: 0;
+}
+
+.content .highlight pre {
+    padding: 1rem 1.2rem;
+}
+
+.content .highlight .gutter {
+    width: 2rem;
+}
+
+.content .highlight .gutter pre {
+    text-align: right;
+    padding: 1rem 0 1rem 1rem;
+}
+
+.hljs {
+    padding: 0;
+    background: transparent;
 }
 
 /* === Footer === */
@@ -71,8 +258,26 @@ footer {
 
 .doku-footer-container {
     margin: 0 auto;
-    max-width: 800px;
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 2rem;
+    overflow-x: auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .doku-footer-container {
+        max-width: 45rem;
+    }
+}
+
+@media screen and (min-width: 1216px) {
+    .doku-footer-container {
+        max-width: 57rem;
+    }
+}
+
+@media screen and (min-width: 1408px) {
+    .doku-footer-container {
+        max-width: 69rem;
+    }
 }
 
 footer a {

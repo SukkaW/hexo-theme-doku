@@ -1,0 +1,32 @@
+<% const toc_obj = toc(page.content, {
+    class: 'post-toc',
+    list_number: false,
+}) %>
+
+<article class="doku-document-container clearfix">
+    <header class="hero is-light" id="doku-document-hero">
+        <div class="hero-body">
+            <h1 class="title"><%= page.title %></h1>
+            <% if (page.description) { %>
+                <p class="subtitle"><%= page.description %></p>
+            <% } %>
+        </div>
+    </header>
+    <div class="columns">
+        <div class="column is-9 doku-document-wrapper">
+            <div class="content">
+                <%- page.content %>
+            </div>
+        </div>
+        <div class="column is-3 is-narrow-touch is-hidden-touch">
+            <% if (toc_obj.length > 0) { %>
+            <aside class="doku-document-toc" id="doku-document-toc">
+                <div class="doku-document-toc-content">
+                    <p class="doku-document-toc-title">Table of Contents</p>
+                    <%- toc_obj %>
+                </div>
+            </aside>
+            <% } %>
+        </div>
+    </div>
+</article>

@@ -8,15 +8,16 @@
 <body>
     <%- partial('_partial/navbar') %>
 
-    <div class="container">
-        <section class="main-content columns">
+    <div class="container-fluid">
+        <section class="main-content">
             <%- partial('_partial/sidebar') %>
-            <main>
+            <main class="is-paddingless doku-main-wrapper">
                 <%- body %>
+
+                <%- partial('_partial/footer') %>
             </main>
         </section>
     </div>
-    <%- partial('_partial/footer') %>
 
     <script src="<%= url_for('theme-doku/js/doku.js') %>"></script>
 </body>
