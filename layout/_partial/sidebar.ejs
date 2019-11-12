@@ -1,6 +1,16 @@
 <aside class="doku-sidebar" id="doku-sidebar">
     <div class="doku-sidebar-content">
         <div class="menu">
+            <% if (theme.navbar.links) { %>
+                <ul class="menu-list is-hidden-desktop">
+                    <% for (const link of theme.navbar.links) { %>
+                        <% if (link.text) { %>
+                            <li><a href="<%= url_for(link.url) %>"><%= link.text %></span></a></li>
+                        <% } %>
+                    <% } %>
+                </ul>
+            <% } %>
+            <hr class="is-hidden-desktop">
             <% if (theme.sidebar.level === 1) { %>
                 <ul class="menu-list">
                     <% for (const item of theme.sidebar.items) { %>
@@ -8,13 +18,15 @@
                     <% } %>
                 </ul>
             <% } else if (theme.sidebar.level === 2) { %>
-                <% for (const [header, children] of Object.entries(theme.sidebar.items)) { %>
-                    <p class="menu-label"><%= header %></p>
-                    <ul class="menu-list">
-                        <% for (const item of children) { %>
-                            <li><a href="<%= item.split(' | ')[1] %>"><%= item.split(' | ')[0] %></a></li>
-                        <% } %>
-                    </ul>
+                <% for (const obj of theme.sidebar.items) { %>
+                    <% for (const [header, children] of Object.entries(obj)) { %>
+                        <p class="menu-label"><%= header %></p>
+                        <ul class="menu-list">
+                            <% for (const item of children) { %>
+                                <li><a href="<%= item.split(' | ')[1] %>"><%= item.split(' | ')[0] %></a></li>
+                            <% } %>
+                        </ul>
+                    <% } %>
                 <% } %>
             <% } %>
         </div>
