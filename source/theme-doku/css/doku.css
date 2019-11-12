@@ -49,7 +49,36 @@
     padding: 2.5rem 1.5rem;
 }
 
+@media screen and (min-width: 769px) {
+    .doku-sidebar {
+        width: 15rem;
+        flex: none;
+    }
+}
+
 .doku-sidebar .menu-label {
     font-size: .8rem;
     font-weight: 500;
+}
+
+/* === Footer === */
+footer {
+    background: #fafafa;
+    color: #acb3c2;
+    width: 100%;
+    text-align: center
+}
+
+.doku-footer-container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 2.5rem 1rem;
+}
+
+footer a {
+    color: #667189
+}
+
+.doku-footer-item {
+    padding: 0 .5rem;
 }
