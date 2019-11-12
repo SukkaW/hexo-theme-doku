@@ -17,7 +17,7 @@
                 <% if (sidebar.level === 1) { %>
                     <ul class="menu-list">
                         <% for (const item of sidebar.items) { %>
-                            <li><a href="<%= url_for(item.split(' | ')[1]) %>"><%= item.split(' | ')[0] %></a></li>
+                            <li><a <% if (url_for(item.split(' | ')[1]) === url_for(page.path)) { %>class="is-current"<% } %> href="<%= url_for(item.split(' | ')[1]) %>"><%= item.split(' | ')[0] %></a></li>
                         <% } %>
                     </ul>
                 <% } else if (sidebar.level === 2) { %>
@@ -26,7 +26,7 @@
                             <p class="menu-label"><%= header %></p>
                             <ul class="menu-list">
                                 <% for (const item of children) { %>
-                                    <li><a href="<%= url_for(item.split(' | ')[1]) %>"><%= item.split(' | ')[0] %></a></li>
+                                    <li><a <% if (url_for(item.split(' | ')[1]) === url_for(page.path)) { %>class="is-current"<% } %> href="<%= url_for(item.split(' | ')[1]) %>"><%= item.split(' | ')[0] %></a></li>
                                 <% } %>
                             </ul>
                         <% } %>
