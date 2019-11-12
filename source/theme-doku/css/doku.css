@@ -288,6 +288,13 @@ html *::-webkit-scrollbar-thumb {
     background: transparent;
 }
 
+.content .doku-note-title {
+    margin: 0 0 1rem;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
 /* === Sidebar Mobile === */
 body.doku-sidebar-visible::before {
     position: fixed;
