@@ -1,11 +1,12 @@
 <% const sidebar = theme.sidebar[page.lang][page.type]; %>
+<% const navbar = theme.navbar.links[page.lang]; %>
 
 <aside class="doku-sidebar" id="doku-sidebar">
     <div class="doku-sidebar-content">
         <div class="menu">
             <% if (theme.navbar.links) { %>
                 <ul class="menu-list is-hidden-desktop">
-                    <% for (const link of theme.navbar.links) { %>
+                    <% for (const link of navbar) { %>
                         <% if (link.text) { %>
                             <li><a href="<%= url_for(link.url) %>"><%= link.text %></span></a></li>
                         <% } %>
