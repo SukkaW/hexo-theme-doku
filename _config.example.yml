@@ -11,12 +11,13 @@ navbar:
   # Leave it as an empty string if you don't have
   logo_text: 'Doku'
   links:
-    - logo: # The font-awesome class name of the logo. Leave it blank if you don't need logo for this link
-      text: '使用文档' # The logo text
-      url: '/' # The url
-    - logo: 'fab fa-github' # The font-awesome class name of the logo
-      text: '' # The logo text
-      url: 'https://github.com/SukkaW/hexo-theme-doku' # The url
+    zh-CN:
+      # - logo: # The font-awesome class name of the logo. Leave it blank if you don't need logo for this link
+      #  text: '使用文档' # The logo text
+      #  url: '/' # The url
+      # - logo: 'fab fa-github' # The font-awesome class name of the logo
+      #  text: '' # The logo text
+      #  url: 'https://github.com/SukkaW/hexo-theme-doku' # The url
 
 # --------------------
 # Sidebar Items
@@ -36,13 +37,8 @@ sidebar:
         #  - 配置 | config.html
         # 基本操作:
         #  - 编写 | writing.html
-        - 开始使用:
-          - '介绍 | index.html'
-          - '安装 | install.html'
-          - '配置 | config.html'
-        - 基本操作:
-          - '编写 | writing.html'
+
 
 github:
-  repo: sukkaw/doku-theme-docs # sukkaw/doku-theme-docs
+  repo: # sukkaw/doku-theme-docs
   edit_on_github: true # true / false
