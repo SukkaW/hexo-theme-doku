@@ -5,12 +5,12 @@ module.exports = function (hexo) {
         let result = '';
 
         if (args.length) {
-          header += `<strong class="doku-note-title">${args.join(' ')}</strong>`;
+          header += `<div class="message-header">${args.join(' ')}</div>`;
         }
 
-        result += `<blockquote class="is-${className}">${header}`;
+        result += `<blockquote class="message doku-blockquote is-${className}">${header}<div class="message-body">`;
         result += hexo.render.renderSync({text: content, engine: 'markdown'});
-        result += '</blockquote>';
+        result += '</div></blockquote>';
 
         return result;
       }, true);

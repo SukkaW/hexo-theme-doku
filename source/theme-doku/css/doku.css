@@ -265,6 +265,11 @@ html *::-webkit-scrollbar-thumb {
 
 /* override highlightjs */
 
+.content blockquote.doku-blockquote {
+    border: none;
+    padding: 0;
+}
+
 .content .highlight {
     margin-left: 0;
     margin-right: 0;
