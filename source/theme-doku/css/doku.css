@@ -266,8 +266,8 @@ html *::-webkit-scrollbar-thumb {
 /* override highlightjs */
 
 .content .highlight {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 0;
+    margin-right: 0;
     overflow: auto;
 }
 
@@ -292,6 +292,18 @@ html *::-webkit-scrollbar-thumb {
 .hljs {
     padding: 0;
     background: transparent;
+}
+
+.highlight .number {
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+    min-width: 0;
+    height: inherit;
+    background-color: inherit;
+    vertical-align: inherit;
+    display: inherit;
 }
 
 .content .doku-note-title {

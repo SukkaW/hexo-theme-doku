@@ -1,12 +1,14 @@
-const { basename } = require('path');
-
 module.exports = function (hexo) {
-    const url_for = hexo.extend.helper.get('url_for').bind(hexo);
+    const _url_for = hexo.extend.helper.get('url_for').bind(hexo);
+    const url_for = (path) => {
+        return _url_for(path).replace('index.html', '');
+    }
 
     hexo.extend.helper.register('page_title', function (page = null) {
         page = (page === null) ? this.page : page;
 
-        return [page.title, hexo.config.title].filter((str) => typeof (str) !== 'undefined' && str.trim() !== '').join(' | ');
+        const data = [page.title, hexo.config.title];
+        return data.filter((str) => typeof (str) !== 'undefined' && str.trim() !== '').join(' | ');
     });
 
     hexo.extend.helper.register('_meta_generator', () => `<meta name="generator" content="Hexo ${hexo.version}">`);
