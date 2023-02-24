@@ -13,7 +13,7 @@ module.exports = function (hexo) {
 
     hexo.extend.helper.register('_meta_generator', () => `<meta name="generator" content="Hexo ${hexo.version}">`);
 
-    hexo.extend.helper.register('page_nav', function (page = null) {
+    hexo.extend.helper.register('page_nav', function (page = null, prev_page_title, next_page_title) {
         page = (page === null) ? this.page : page;
         const { path } = this;
 
@@ -43,7 +43,7 @@ module.exports = function (hexo) {
             html += `
             <li class="page-item page-prev">
                 <a href="${sidebarLinkArr[index - 1]}">
-                    <div class="page-item-subtitle"><span class="icon is-small"><i class="fas fa-arrow-left"></i></span> <span>前一页</span></div>
+                    <div class="page-item-subtitle"><span class="icon is-small"><i class="fas fa-arrow-left"></i></span> <span>${prev_page_title}</span></div>
                     <div class="page-item-title h5">${sidebarNameArr[index - 1]}</div>
                 </a>
             </li>`;
@@ -53,7 +53,7 @@ module.exports = function (hexo) {
             html += `
             <li class="page-item page-next">
                 <a href="${sidebarLinkArr[index + 1]}">
-                    <div class="page-item-subtitle"><span>后一页</span> <span class="icon is-small"><i class="fas fa-arrow-right"></i></span></div>
+                    <div class="page-item-subtitle"><span>${next_page_title}</span> <span class="icon is-small"><i class="fas fa-arrow-right"></i></span></div>
                     <div class="page-item-title h5">${sidebarNameArr[index + 1]}</div>
                 </a>
             </li>`;
